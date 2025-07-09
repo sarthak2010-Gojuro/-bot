@@ -24,7 +24,7 @@ async def gpt_reply(prompt):
     )
     return response['choices'][0]['message']['content']
 
-@bot.on_message(filters.text & ~filters.edited)
+@bot.on_message(filters.text)
 async def reply(client, message):
     if message.from_user.is_bot:
         return
